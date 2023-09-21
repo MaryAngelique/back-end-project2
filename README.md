@@ -22,3 +22,7 @@ function(req, res) {
   res.send('Response String');
 }
 will serve the string 'Response String'.
+
+Use the app.get() method to serve the string "Hello Express" to GET requests matching the / (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Replit.
+
+***
