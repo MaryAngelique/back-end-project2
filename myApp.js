@@ -11,4 +11,7 @@ app.listen(3001, function() {
     console.log('Listening on port 3000');
 });
 
+app.get("/", function(request, response) {
+    response.sendFile("/views/index.html"  , { root : __dirname})
+});
 module.exports = app;
