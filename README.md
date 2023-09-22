@@ -48,3 +48,8 @@ If you don’t know what middleware is... don’t worry, we will discuss in deta
 Mount the express.static() middleware to the path /public with app.use(). The absolute path to the assets folder is __dirname + /public.
 
 Now your app should be able to serve a CSS stylesheet. Note that the /public/style.css file is referenced in the /views/index.html in the project boilerplate. Your front-page should look a little better now!
+
+***
+
+## Serve JSON on a Specific Route
+While an HTML server serves HTML, an API serves data. A REST (REpresentational State Transfer) API allows data exchange in a simple way, without the need for clients to know any detail about the server. The client only needs to know where the resource is (the URL), and the action it wants to perform on it (the verb). The GET verb is used when you are fetching some information, without modifying anything. These days, the preferred data format for moving information around the web is JSON. Simply put, JSON is a convenient way to represent a JavaScript object as a string, so it can be easily transmitted.
