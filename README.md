@@ -40,3 +40,5 @@ Note: You can edit the solution of the previous challenge or create a new one. I
 
 ## Serve Static Assets
 An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images).
+
+In Express, you can put in place this functionality using the middleware express.static(path), where the path parameter is the absolute path of the folder containing the assets.
