@@ -68,3 +68,5 @@ The environment variables are accessible from the app as process.env.VAR_NAME. T
 Let's add an environment variable as a configuration option.
 
 Create a .env file in the root of your project directory, and store the variable MESSAGE_STYLE=uppercase in it.
+
+Then, in the /json GET route handler you created in the last challenge access process.env.MESSAGE_STYLE and transform the response object's message to uppercase if the variable equals uppercase. The response object should either be {"message": "Hello json"} or {"message": "HELLO JSON"}, depending on the MESSAGE_STYLE value. Note that you must read the value of process.env.MESSAGE_STYLE inside the route handler, not outside of it, due to the way our tests run.
