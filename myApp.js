@@ -20,12 +20,21 @@ app.get("/", function(request, response) {
     response.sendFile("/views/index.html"  , { root : __dirname})
 });
 
-app.get("/json", (req, response) => {
+app.get("/json", (request, response) => {
     let message = "Hello json"
     if (process.env.MESSAGE_STYLE === "uppercase") {
         return response.json({"message": message.toUpperCase()})
     }
     return response.status(200).json({"message": message})
 })
+
+let message = { message: "Hello json" };
+app.get("/json", (request, response) => {
+    if (process.env.MESSAGE_STYLE === "uppercase") {
+        response.json({ message: "HELLO JSON" });
+    } else {
+        response.json(message);
+    }
+});
 
 module.exports = app;
