@@ -29,11 +29,16 @@ app.get("/json", (request, response) => {
 })
 
 app.get("/json", (request, response) => {
-    if (process.env.MESSAGE_STYLE === "uppercase") {
-        response.json({ message: "HELLO JSON" });
+    if (process.env["MESSAGE_STYLE"] == "uppercase") {
+        response.json({ "message": "HELLO JSON" });
     } else {
         response.json({"message": "Hello json"});
     }
 });
+
+app.use((request, response, next) => {
+    console.group(`${request.method} ${request.path} ${request.ip}`);
+    next();
+})
 
 module.exports = app;
