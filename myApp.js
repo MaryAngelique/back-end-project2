@@ -41,4 +41,12 @@ app.use((request, response, next) => {
     next();
 })
 
+app.get("/now", function(request, response, next){ 
+    next();
+    }, function(request, response){
+        var time = new Date()
+        console.log("time"+time);
+        response.json({"time": time});
+});
+
 module.exports = app;
