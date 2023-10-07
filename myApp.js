@@ -28,12 +28,11 @@ app.get("/json", (request, response) => {
     return response.status(200).json({"message": message})
 })
 
-let message = { message: "Hello json" };
 app.get("/json", (request, response) => {
     if (process.env.MESSAGE_STYLE === "uppercase") {
         response.json({ message: "HELLO JSON" });
     } else {
-        response.json(message);
+        response.json({"message": "Hello json"});
     }
 });
 
