@@ -99,5 +99,10 @@ Middleware can be mounted at a specific route using app.METHOD(path, middlewareF
 
 Look at the following example:
 ```
-
+app.get('/user', function(req, res, next) {
+  req.user = getTheUserSync();  // Hypothetical synchronous operation
+  next();
+}, function(req, res) {
+  res.send(req.user);
+});
 ```
