@@ -36,10 +36,11 @@ app.get("/json", (request, response) => {
     }
 });
 
-app.use((request, response, next) => {
-    console.group(`${request.method} ${request.path} ${request.ip}`);
+app.use((req, res, next) => {
+    let string = `${req.method} ${req.path} - ${req.ip}`
+    console.log(string) 
     next();
-})
+});
 
 app.get("/now", function(request, response, next){ 
     next();
