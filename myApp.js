@@ -49,4 +49,12 @@ app.get("/now", function(request, response, next){
         response.json({"time": time});
 });
 
+app.get("/:word/echo", (request, response) => {
+    let word = request.params.word
+    
+    let jsonObj = {echo: word, echo: word};
+    response.send(jsonObj);
+});
+
+
 module.exports = app;
