@@ -68,4 +68,8 @@ app.get("/name", (request, response) => {
     response.send(jsonObj);
 });
 
+app.post("/name", (request, response) => {
+    let name = request.body.first + " " + request.body.last;
+    response.json({ name: name });
+});
 module.exports = app;
