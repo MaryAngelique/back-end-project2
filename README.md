@@ -130,3 +130,5 @@ route_path: '/library'
 actual_request_URL: '/library?userId=546&bookId=6754'
 req.query: {userId: '546', bookId: '6754'}
 ```
+Build an API endpoint, mounted at GET /name. Respond with a JSON document, taking the structure { name: 'firstname lastname'}. The first and last name parameters should be encoded in a query string e.g. ?first=firstname&last=lastname.
+
