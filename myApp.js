@@ -55,7 +55,7 @@ app.get("/now", function(request, response, next){
 
 app.get("/:word/echo", (request, response) => {
     let word = request.params.word
-    
+
     let jsonObj = {echo: word, echo: word};
     response.send(jsonObj);
 });
@@ -72,4 +72,5 @@ app.post("/name", (request, response) => {
     let name = request.body.first + " " + request.body.last;
     response.json({ name: name });
 });
+
 module.exports = app;
